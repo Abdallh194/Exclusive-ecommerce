@@ -6,10 +6,7 @@ import ProductCard from "../components/ProductCard/ProductCard";
 import CountdownTimer from "../components/ui/CountdownTimer";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import {
-  cleanprodcutfullinfo,
-  GetAllProductsThunck,
-} from "@redux/Products/ProductsSlice";
+import { GetAllProductsThunck } from "@redux/Products/ProductsSlice";
 
 const LandingPage = () => {
   const dispatch = useAppDispatch();
@@ -23,9 +20,6 @@ const LandingPage = () => {
     if (!Products.length) {
       dispatch(GetAllProductsThunck());
     }
-    return () => {
-      dispatch(cleanprodcutfullinfo());
-    };
   }, [dispatch, Products]);
 
   return (
