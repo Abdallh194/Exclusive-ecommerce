@@ -1,8 +1,14 @@
 import Lottie from "lottie-react";
 import not_found from "@assets/LottieFiles/not_found.json";
 import { useParams, useRouteError } from "react-router-dom";
+
+interface RouteError {
+  status?: number;
+  statusText?: string;
+}
+
 const CategoriesNotFound = () => {
-  const error = useRouteError();
+  const error = useRouteError() as RouteError;
   const { prefix } = useParams();
 
   return (
@@ -17,9 +23,9 @@ const CategoriesNotFound = () => {
         }}
       />
       <h2>
-        {error.status} {prefix}
+        {error?.status || "Unknown Status"} {prefix}
       </h2>
-      <h3>{error.statusText}</h3>
+      <h3>{error?.statusText || "Unknown Error"}</h3>
     </>
   );
 };
