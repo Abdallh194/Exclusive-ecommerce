@@ -1,0 +1,85 @@
+.ExploreCategories {
+  background-color: black;
+  color: white;
+  padding: 10px 71px;
+  margin-top: 90px;
+  .ExploreCategories-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ExploreCategories-info {
+    color: $green-color;
+    font-weight: 600;
+  }
+  .ExploreCategories-head {
+    font-size: 69px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top: 19px;
+  }
+  .item {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin: 30px 26px 25px 0;
+    .num {
+      font-family: system-ui;
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+  .buy {
+    background-color: $green-color;
+    color: white;
+    border-radius: 3px;
+    width: 200px;
+    text-align: center;
+    padding: 14px;
+    font-weight: 600;
+    margin-top: 25px;
+  }
+  @media (max-width: 1400px) {
+    .ExploreCategories-head {
+      font-size: 48px;
+    }
+  }
+  @media (max-width: 1200px) {
+    .ExploreCategories-head {
+      font-size: 38px;
+    }
+    .counter {
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+    .item {
+      margin: 0;
+    }
+  }
+  @media (max-width: 992px) {
+    padding: 35px;
+    .ExploreCategories-head {
+      font-size: 35px;
+      line-height: 1.2;
+    }
+    .item {
+      width: 65px;
+      height: 65px;
+      font-size: 12px;
+    }
+    .buy {
+      width: 160px;
+      padding: 10px;
+    }
+    .img-fluid {
+      margin-top: 20px;
+    }
+  }
+}

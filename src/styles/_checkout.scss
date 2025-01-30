@@ -1,0 +1,107 @@
+.checkout {
+  .head {
+    font-size: 37px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  form {
+    padding-right: 80px;
+  }
+  label {
+    color: #6b6b6b;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .form-control {
+    border: none;
+    border-radius: 0;
+    height: 45px;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+  }
+  .checkout_bill {
+    .wid-80,
+    .bill-card {
+      width: 80%;
+      margin: auto;
+    }
+    .bill-card {
+      justify-content: space-between;
+      margin-bottom: 40px;
+
+      .name {
+        margin-left: 20px;
+        font-size: 19px;
+        font-weight: 600;
+        color: #444444;
+      }
+      .price {
+        text-align: center;
+      }
+    }
+    .bill-head {
+      font-size: 18px;
+      font-weight: 600;
+      color: #3f3f3f;
+      font-family: system-ui;
+    }
+  }
+  .form-check-input:checked {
+    background-color: #db4444;
+    border-color: #db4444;
+  }
+  //coupoun
+  .g-btn {
+    width: 180px;
+    background-color: #db4444;
+    color: white;
+  }
+  .form-copoun {
+    .Coupon,
+    .btn {
+      height: 50px;
+      border-radius: 0;
+    }
+    .Coupon {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .btn {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      line-height: 2.2;
+    }
+  }
+
+  .card-content {
+    background-color: transparent !important;
+    border: none;
+    padding: 0;
+    .input {
+      border-radius: 4px;
+      height: 55px;
+      background-color: white;
+    }
+    .checkedInput {
+      border-color: #00ff44;
+    }
+  }
+  .check {
+    color: #00b330;
+  }
+  .uncheck {
+    color: red;
+  }
+
+  @media (max-width: 992px) {
+    .head {
+      font-size: 30px;
+    }
+    form {
+      padding-right: 0;
+    }
+    .wid-80 {
+      width: 100% !important;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+//bootstrap
+
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+//vars
+$main-font: "Raleway";
+$logo-font: "Pacifico";
+$main-color: #db4444;
+$sec-color: #c4c4c4;
+$green-color: #00ff66;
+
+body,
+html {
+  font-family: $main-font !important;
+  font-weight: 400;
+  color: black;
+}
+.cus-dflex {
+  display: flex;
+  align-items: center;
+}
+.container {
+  max-width: 1650px;
+}
+.breadcrumb {
+  margin: 50px 0;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  .active {
+    font-weight: 700;
+  }
+}
+.loader {
+  width: 365px;
+  position: absolute;
+  height: 99%;
+  left: 50%;
+  top: 450px;
+  transform: translateX(-50%) translateY(-50%);
+}
+.sale-type {
+  color: $main-color;
+  top: 120px;
+  left: 36px;
+  font-weight: 800;
+  width: fit-content;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 60px;
+    left: -36px;
+    border-radius: 5px;
+    top: -17px;
+    background-color: $main-color;
+  }
+  @media (max-width: 992px) {
+    top: 64px;
+  }
+}
+.empty-cart {
+  width: 390px;
+  margin: auto;
+  text-align: center;
+  p {
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+}
+@import "styles/Header";
+@import "styles/SignIn";
+@import "styles/Footer";
+@import "styles/HomePage";
+@import "styles/Contact";
+@import "styles/About";
+@import "styles/ProductCard";
+@import "styles/cart";
+@import "styles/Wishlist";
+@import "styles/userprofile";
+@import "styles/checkout";
+@import "styles/Orders";
+@import "styles/Categories";
+@import "styles/ExploreCategories";
+@import "styles/NewArrival";
+@import "styles/ProductDetails";

@@ -1,0 +1,45 @@
+.NewArrival {
+  .NewArrival-card {
+    background-color: black;
+    color: white;
+    width: calc(100% / 2 - 40px);
+    margin: 20px auto;
+  }
+  .NewArrival-card-img {
+    width: calc(100% / 2 - 40px);
+    margin: 20px auto;
+  }
+  .wid-100 {
+    background-color: #0e0e0e;
+    .img-fluid {
+      max-width: 43%;
+    }
+  }
+  .w-50 {
+    width: calc(50% - 25px) !important;
+    background-color: #0e0e0e;
+    color: white;
+  }
+  .justify-between {
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .women-content {
+    margin-top: 24%;
+    color: white;
+    margin-left: 36px;
+  }
+  .content-head {
+    font-size: 29px;
+    font-weight: 600;
+  }
+  .content-desc {
+    width: 80%;
+    padding: 10px 0;
+  }
+  .shop-now {
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
