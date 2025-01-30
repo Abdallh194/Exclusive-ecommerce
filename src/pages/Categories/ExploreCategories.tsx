@@ -30,7 +30,7 @@ const ExploreCategories = () => {
           <div className="buy">Buy Now</div>
         </Col>
         <Col md={12} lg={7}>
-          <img src="/music.png" className="img-fluid" />
+          <img src="/iphone.jpg" className="img-fluid" />
         </Col>
       </Row>
     </div>

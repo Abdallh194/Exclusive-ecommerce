@@ -7,7 +7,6 @@ import useProducts from "@components/ProductCard/useProduct";
 import Categories from "./Categories/Categories";
 import ExploreCategories from "./Categories/ExploreCategories";
 import ExploreProducts from "@components/ExploreProducts";
-import NewArrival from "@components/NewArrival";
 
 const LandingPage = () => {
   const { ProductsFullInfo, ExploredProducts } = useProducts();
@@ -47,7 +46,6 @@ const LandingPage = () => {
           <div className="flash-sels">
             <div className="title">New Arrival </div>
           </div>
-          <NewArrival />
         </Container>
       </div>
     </>
