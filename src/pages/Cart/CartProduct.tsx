@@ -30,7 +30,9 @@ const CartProduct: React.FC<ProductListProps> = ({ products }) => {
             <Qty setLoading={setLoading} Product={e} />
           </Col>
           <Col xs={2} className="headers">
-            <div className="product-price item">{e.price * e.Quantity}$</div>
+            <div className="product-price item">
+              {e.price * (e.Quantity ?? 0)}$
+            </div>
           </Col>
           <Col xs={2} className="headers">
             <DeleteFromCard id={e.id} setLoading={setLoading} />

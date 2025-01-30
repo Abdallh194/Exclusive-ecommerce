@@ -22,7 +22,9 @@ const CheckOutBill: React.FC<ProductListProps> = ({
 
   const SubTotal = () => {
     let total = 0;
-    products.forEach((product) => (total += product.price * product.Quantity));
+    products.forEach(
+      (product) => (total += product.price * (product.Quantity ?? 0))
+    );
     return total;
   };
 

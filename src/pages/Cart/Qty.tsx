@@ -22,7 +22,7 @@ const Qty = ({ Product, setLoading }: ProductQty) => {
 
   return (
     <div className="product-qty d-flex item">
-      {Product.Quantity >= 3 ? (
+      {(Product.Quantity ?? 0) >= 3 ? (
         <div className="increase mx-2 disable-btn">
           <FaPlus />{" "}
         </div>
