@@ -46,7 +46,7 @@ declare type TDataType = {
   title: string;
   price: number;
   cat_prefix: string;
-  Quantity: number;
+  Quantity?: number;
   max: number;
   discount: string;
   category: string;
