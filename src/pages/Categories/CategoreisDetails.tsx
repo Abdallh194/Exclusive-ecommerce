@@ -6,6 +6,7 @@ import Lottie from "lottie-react";
 import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import empty from "@assets/LottieFiles/empty.json";
+import { useEffect } from "react";
 
 const CategoreisDetails = () => {
   const { prefix } = useParams();
@@ -13,6 +14,9 @@ const CategoreisDetails = () => {
   const CategoreisDetails = ProductsFullInfo.filter(
     (p) => p.cat_prefix == prefix
   );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [prefix]);
 
   return (
     <HelmetProvider>

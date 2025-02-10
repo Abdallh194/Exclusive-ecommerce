@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Breadcrumbs = () => {
   const location = useLocation();
@@ -8,21 +8,22 @@ const Breadcrumbs = () => {
     <nav>
       <ol className="breadcrumb">
         <li className="breadcrumb-item">
-          <Link to="/">Home</Link>
+          <a href="/">Home</a>
         </li>
         {pathnames.map((value, index) => {
           const to = `/${pathnames.slice(0, index + 1).join("/")}`;
           const isLast = index === pathnames.length - 1;
+          const decodedValue = decodeURIComponent(value);
 
           return isLast ? (
             <li className="breadcrumb-item active" key={to}>
-              {value.charAt(0).toUpperCase() + value.slice(1)}
+              {decodedValue.charAt(0).toUpperCase() + decodedValue.slice(1)}
             </li>
           ) : (
             <li className="breadcrumb-item" key={to}>
-              <Link to="#">
-                {value.charAt(0).toUpperCase() + value.slice(1)}
-              </Link>
+              <a href={to}>
+                {decodedValue.charAt(0).toUpperCase() + decodedValue.slice(1)}
+              </a>
             </li>
           );
         })}

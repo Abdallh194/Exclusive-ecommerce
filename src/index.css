@@ -203,6 +203,9 @@ html {
   .navbar .dropdown-menu {
     left: -5px;
   }
+  .navbar .icon {
+    width: 25px;
+  }
 }
 
 .SignIn .alerterror {
@@ -1236,6 +1239,9 @@ footer .copy a {
   }
 }
 
+.checkout {
+  overflow-x: hidden;
+}
 .checkout .head {
   font-size: 37px;
   font-weight: 600;
@@ -1569,6 +1575,9 @@ footer .copy a {
   font-size: 18px;
 }
 
+.ProductDetails .row {
+  margin: 23px 0;
+}
 .ProductDetails .product-imgs {
   width: 28%;
   margin: 0px auto;
@@ -1748,5 +1757,8 @@ footer .copy a {
   }
   .ProductDetails .MuiRating-root {
     padding: 0;
+  }
+  .ProductDetails .quntity .num {
+    width: 50px;
   }
 }/*# sourceMappingURL=index.css.map */

@@ -12,7 +12,6 @@ import empty from "@assets/LottieFiles/empty.json";
 
 const Orders = () => {
   const { formData, UserOrders } = useOrder();
-  console.log(formData);
 
   return (
     <div className="Orders">

@@ -1,15 +1,36 @@
 import useProducts from "@components/ProductCard/useProduct";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import Breadcrumbs from "@components/Breadcrumb";
-import { Rating } from "@mui/material";
-import { FaCarCrash, FaRegHeart, FaRegThumbsDown } from "react-icons/fa";
+import { Button, Rating, Tooltip } from "@mui/material";
+import {
+  FaCarCrash,
+  FaHeart,
+  FaRegHeart,
+  FaRegThumbsDown,
+} from "react-icons/fa";
+import { AddItemToCart } from "@redux/Cart/CartSliceEnhance";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AddItemToWishList } from "@redux/WishList/WishlistSlice";
+import { IconButton } from "@mui/joy";
+import { useEffect } from "react";
 
 const ProductDetails = () => {
   const { prefix } = useParams();
-  const { ProductsFullInfo } = useProducts();
-  const SelectedProduct = ProductsFullInfo.filter((p) => p.id == prefix);
+  const PName = decodeURIComponent(prefix?.toString() ?? "");
+
+  const {
+    ProductsFullInfo,
+    dispatch,
+    setisDisabled,
+    isDisabled,
+    RemaingHandler,
+  } = useProducts();
+  const SelectedProduct = ProductsFullInfo.filter((p) => p.title == PName);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [dispatch]);
   return (
     <HelmetProvider>
       <Helmet>
@@ -69,10 +90,57 @@ const ProductDetails = () => {
                   <span className="num">1</span>
                   <span className="inc">+</span>
                 </div>
-                <div className="buy">Buy Now</div>
-                <div className="fav">
-                  <FaRegHeart />
-                </div>
+                <Button
+                  variant="contained"
+                  color="error"
+                  onClick={() => {
+                    dispatch(AddItemToCart(product.id));
+                    setisDisabled(true);
+                  }}
+                  disabled={isDisabled || product.Quantity === product.max}
+                >
+                  {isDisabled ? (
+                    <>
+                      <Spinner animation="border" size="sm" /> Loading ...
+                    </>
+                  ) : (
+                    <>
+                      {product.Quantity === product.max ? (
+                        "You Reached the limit"
+                      ) : (
+                        <>
+                          Add to Cart
+                          <AiOutlineShoppingCart />
+                        </>
+                      )}
+                    </>
+                  )}
+                </Button>
+                {product.isLiked ? (
+                  <Tooltip className="fav" title="Item added to wishlist">
+                    <IconButton>
+                      <FaHeart className="fav-icon" style={{ color: "red" }} />
+                    </IconButton>
+                  </Tooltip>
+                ) : (
+                  <Tooltip className="fav" title="Add to favourites">
+                    <IconButton
+                      onClick={() => {
+                        dispatch(AddItemToWishList(product.id));
+                      }}
+                    >
+                      <FaRegHeart className="fav-icon" />
+                    </IconButton>
+                  </Tooltip>
+                )}
+              </div>
+              <div className="qty">
+                {(product.Quantity ?? 0) > 0 ? (
+                  <>
+                    {product.Quantity} in cart remaining{" "}
+                    {RemaingHandler(product.max, product.Quantity ?? 0)}
+                  </>
+                ) : null}
               </div>
               <div className="delivey">
                 <div className="d-flex">

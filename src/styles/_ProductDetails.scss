@@ -1,4 +1,7 @@
 .ProductDetails {
+  .row {
+    margin: 23px 0;
+  }
   .product-imgs {
     width: 28%;
     margin: 0px auto;
@@ -182,6 +185,11 @@
     }
     .MuiRating-root {
       padding: 0;
+    }
+    .quntity {
+      .num {
+        width: 50px;
+      }
     }
   }
 }
